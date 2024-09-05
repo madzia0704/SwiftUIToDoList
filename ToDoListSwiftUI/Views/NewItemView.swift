@@ -26,10 +26,18 @@ struct NewItemView: View {
                     .datePickerStyle(GraphicalDatePickerStyle())
                 
                 TLButton(title: "Save", background: .pink) {
-                    viewModel.save()
+                    if viewModel.canSave() {
+                        viewModel.save()
+                        newItemPresented = false
+                    } else {
+                        newItemPresented = true
+                    }
                 }
                 .padding()
             }
+            .alert(isPresented: $viewModel.showAlert, content: {
+                Alert(title: Text("Error"), message: Text("Please fill in all fields and select due date that is today or newer."))
+            })
         }
     }
 }
