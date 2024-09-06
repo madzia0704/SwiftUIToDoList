@@ -4,4 +4,4 @@ ToDoList Swift UI
 -> add firabase-ios-sdk (File -> Add Package Dependencies) (FirebaseAuth, FirebaseFirestore, FirebaseFirestoreSwift)
 
 
-// tutorial continue czas:  1:56:20
+// tutorial continue czas:  2:18
